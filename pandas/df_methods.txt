@@ -1,0 +1,19 @@
+- index() -> returns indexes (row labels)
+
+- shape[0] -> returns total rows of a file()
+
+- unique() -> extracts the unique values present in the df
+
+- nunique() -> counts the number of the unique values in a df (column)
+
+- df["header_name"].iloc[0] -> retrieves just 1 value of the headers
+
+- isnull.sum() -> blank cells amount
+
+- df.to_list() -> list all the values in the header
+
+- rename() -> changes the names of the labels
+
+- pop() -> deletes rows or columns
+
+- duplicate() -> extracts rows that have duplicated values

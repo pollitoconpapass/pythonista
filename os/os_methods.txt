@@ -1,0 +1,50 @@
+The os module in Python provides a way to use operating system dependent functionality. 
+Here are some of the principal os methods and a brief description of each:
+
+- os.getcwd(): Returns the current working directory of the process.
+
+- os.chdir(path): Changes the current working directory to the given path.
+
+- os.mkdir(path): Creates a new directory named path.
+
+- os.makedirs(path): Creates a new directory and all its parents if they don't exist.
+
+- os.rmdir(path): Removes the directory path.
+
+- os.removedirs(path): Removes the directory path and all its parents if they are empty.
+
+- os.listdir(path): Returns a list containing the names of the entries in the directory given by path.
+
+- os.rename(src, dst): Renames the file or directory src to dst.
+
+- os.remove(path): Removes the file path.
+
+- os.unlink(path): Removes the file path.
+
+- os.walk(top): Generates the file names in a directory tree by walking the tree either top-down or bottom-up.
+
+- os.path.join(path1, path2, ...): Joins one or more path components intelligently.
+
+- os.path.split(path): Splits the pathname path into a pair (head, tail).
+
+- os.path.exists(path): Returns True if path exists.
+
+- os.path.isfile(path): Returns True if path is an existing regular file.
+
+- os.path.isdir(path): Returns True if path is an existing directory.
+
+- os.path.getsize(path): Returns the size of the file in bytes.
+
+- os.environ: A dictionary representing the environment variables.
+
+- os.system(command): Executes the command (a string) in a subshell.
+
+- os.name: The name of the operating system dependent module imported.
+
+- os.sep: The character used by the operating system to separate pathname components.
+
+- os.pathsep: The character used by the operating system to separate search path components.
+
+- os.linesep: The string used to separate (or terminate) lines on the current platform.
+
+- os.urandom(n): Returns a string of n random bytes suitable for cryptographic use.
