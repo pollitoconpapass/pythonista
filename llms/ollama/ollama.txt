@@ -1,0 +1,27 @@
+- Pull a model
+
+    ollama pull llama3.1
+
+- Remove a model
+
+    ollama rm llama3.1
+
+- Show model information
+
+    ollama show llama3.1
+
+- List models in your computer
+
+    ollama List
+
+- List models currently loaded
+
+    ollama ps
+
+- Stop a model currently running
+
+    ollama stop llama3.1
+
+- Start Ollama server
+
+    ollama serve
