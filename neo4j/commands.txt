@@ -1,0 +1,27 @@
+* See all the nodes
+MATCH(n) RETURN n
+
+* See all the relationships made
+MATCH ()-[r]->() RETURN r, startNode(r) AS start, endNode(r) AS end
+
+* Make sure relationships exists
+MATCH ()-[r]->() RETURN  count(r) AS totalRelationships
+
+* Delete all nodes and relationships in the db
+MATCH(n)
+DETACH DELETE n
+
+* Obtain a Type Specific nodes
+MATCH(n: Diagnosis) RETURN n
+
+* Search nodes of a Specific criteria
+MATCH(n: Medication {name: 'Aspirin'}) RETURN n
+
+* Obtain nodes and its relationships
+MATCH (n)-[r]->(m) RETURN n, r, m
+
+* Update node properties
+MATCH (n: Medication{name: 'Aspirin'}) SET n.dosage='500 mg' RETURN n
+
+* Eliminate a specifi node
+MATCH (n: Diagnosis {name: 'anemia in ...'}) DETACH DELETE n
