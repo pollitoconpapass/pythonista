@@ -7,9 +7,8 @@ MATCH ()-[r]->() RETURN r, startNode(r) AS start, endNode(r) AS end
 * Make sure relationships exists
 MATCH ()-[r]->() RETURN  count(r) AS totalRelationships
 
-* Delete all nodes and relationships in the db
-MATCH(n)
-DETACH DELETE n
+* Check a specific relationship
+MATCH p=()-[:TRATA]->() RETURN p
 
 * Obtain a Type Specific nodes
 MATCH(n: Diagnosis) RETURN n
@@ -23,5 +22,14 @@ MATCH (n)-[r]->(m) RETURN n, r, m
 * Update node properties
 MATCH (n: Medication{name: 'Aspirin'}) SET n.dosage='500 mg' RETURN n
 
-* Eliminate a specifi node
+* Update Node types to another existing Node
+MATCH (n:Sintomas_Medicos)
+SET n:Síntomas
+REMOVE n:Sintomas_Medicos;
+
+* Delete all nodes and relationships in the db
+MATCH(n)
+DETACH DELETE n
+
+* Eliminate a specific node
 MATCH (n: Diagnosis {name: 'anemia in ...'}) DETACH DELETE n
