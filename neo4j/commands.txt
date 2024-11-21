@@ -19,6 +19,12 @@ MATCH(n: Medication {name: 'Aspirin'}) RETURN n
 * Obtain nodes and its relationships
 MATCH (n)-[r]->(m) RETURN n, r, m
 
+* List all the existing nodes
+MATCH (n) RETURN DISTINCT labels(n) AS Labels, count(n) AS Count
+
+* List all the existing relationships
+MATCH ()-[r]->() RETURN DISTINCT type(r) AS Type, count(r) AS Count
+
 * Update node properties
 MATCH (n: Medication{name: 'Aspirin'}) SET n.dosage='500 mg' RETURN n
 
