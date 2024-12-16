@@ -2,6 +2,7 @@ import gc
 import os
 import time
 import logging
+import certifi
 from functools import wraps
 from openai import AzureOpenAI
 from pymongo import MongoClient
@@ -19,7 +20,7 @@ URL = os.getenv("MONGO_HOST")
 DATABASE_NAME = os.getenv("DATABASE_NAME")
 COLLECTION_NAME = os.getenv("COLLECTION_NAME")
 
-client = MongoClient(URL)
+client = MongoClient(URL, tlsCAFile=certifi.where())
 db = client[DATABASE_NAME]
 collection = db[COLLECTION_NAME]
 
