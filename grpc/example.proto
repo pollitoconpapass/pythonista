@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package example;
+
+message TTSRequest {
+    string text = 1;
+    string region = 2;
+}
+
+message TTSResponse {
+    bytes audio = 1;
+}
+
+message STTRequest {
+    bytes audio = 1;
+}
+
+message STTResponse {
+    string transcription = 1;
+}
+
+
+service SpeechRecognition {
+    rpc tts(TTSRequest) returns (TTSResponse)
+    rpc stt(STTRequest) return (STTResponse)
+}
+
